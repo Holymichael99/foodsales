@@ -21,3 +21,7 @@ print("Sales by Region:\n", sales_by_region, "\n")
 # Sales by City
 sales_by_city = df.groupby('City')['TotalSales'].sum().reset_index()
 print("Top Cities by Total Sales:\n", sales_by_city.sort_values(by='TotalSales', ascending=False).head(), "\n")
+
+# Sales by Product
+sales_by_product = df.groupby('Product')['TotalSales'].sum().reset_index()
+print("Top Products by Total Sales:\n", sales_by_product.sort_values(by='TotalSales', ascending=False).head(), "\n")
