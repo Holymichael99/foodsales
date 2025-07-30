@@ -18,3 +18,6 @@ df['Year'] = df['OrderDate'].dt.year
 sales_by_region = df.groupby('Region')['TotalSales'].sum().reset_index()
 print("Sales by Region:\n", sales_by_region, "\n")
 
+# Sales by City
+sales_by_city = df.groupby('City')['TotalSales'].sum().reset_index()
+print("Top Cities by Total Sales:\n", sales_by_city.sort_values(by='TotalSales', ascending=False).head(), "\n")
