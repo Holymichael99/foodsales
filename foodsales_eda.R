@@ -21,3 +21,6 @@ sapply(data, function(x) sum(is.na(x)))
 # Check for duplicates
 cat("Duplicates:", sum(duplicated(data)), "\n")
 
+# Summary statistics for numerical columns
+summary(select(data, Quantity, UnitPrice))
+
