@@ -82,3 +82,14 @@ plt.title("Unit Price by Category")
 plt.tight_layout()
 plt.show()
 
+
+# --------------------------------------------
+# 6. Correlation Matrix
+# --------------------------------------------
+
+plt.figure(figsize=(5, 4))
+corr = data[['Quantity', 'UnitPrice', 'TotalSales']].corr()
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title("Correlation Matrix")
+plt.tight_layout()
+plt.show()
