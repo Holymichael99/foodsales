@@ -93,3 +93,29 @@ sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title("Correlation Matrix")
 plt.tight_layout()
 plt.show()
+
+# --------------------------------------------
+# 7. Visualizations of Trends
+# --------------------------------------------
+
+# Line plot: Sales over time
+plt.figure(figsize=(8, 4))
+daily_sales = data.groupby('OrderDate')['TotalSales'].sum().reset_index()
+sns.lineplot(x='OrderDate', y='TotalSales', data=daily_sales, color='blue')
+plt.title("Sales Over Time")
+plt.tight_layout()
+plt.show()
+
+# Bar plot: Monthly sales by year
+monthly_sales = data.groupby(['Year', 'Month'])['TotalSales'].sum().reset_index()
+# Order months
+months_ordered = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+monthly_sales['Month'] = pd.Categorical(monthly_sales['Month'], categories=months_ordered, ordered=True)
+monthly_sales = monthly_sales.sort_values(['Year', 'Month'])
+
+plt.figure(figsize=(10, 5))
+sns.barplot(x='Month', y='TotalSales', hue='Year', data=monthly_sales)
+plt.title("Monthly Sales by Year")
+plt.tight_layout()
+plt.show()
