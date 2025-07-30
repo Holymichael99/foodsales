@@ -45,3 +45,40 @@ data['OrderDate'] = pd.to_datetime(data['OrderDate'])
 data['TotalSales'] = data['Quantity'] * data['UnitPrice']
 data['Month'] = data['OrderDate'].dt.month_name().str[:3]
 data['Year'] = data['OrderDate'].dt.year
+
+# --------------------------------------------
+# 5. Distributions (Histograms & Box Plots)
+# --------------------------------------------
+
+# Histogram: Quantity
+plt.figure(figsize=(6, 4))
+sns.histplot(data['Quantity'], bins=30, color='skyblue', kde=False)
+plt.title("Distribution of Quantity")
+plt.xlabel("Quantity")
+plt.ylabel("Frequency")
+plt.tight_layout()
+plt.show()
+
+# Histogram: Unit Price
+plt.figure(figsize=(6, 4))
+sns.histplot(data['UnitPrice'], bins=30, color='salmon', kde=False)
+plt.title("Distribution of Unit Price")
+plt.xlabel("Unit Price")
+plt.ylabel("Frequency")
+plt.tight_layout()
+plt.show()
+
+# Boxplot: Quantity by Category
+plt.figure(figsize=(6, 4))
+sns.boxplot(x='Category', y='Quantity', data=data, palette='Greens')
+plt.title("Quantity by Category")
+plt.tight_layout()
+plt.show()
+
+# Boxplot: Unit Price by Category
+plt.figure(figsize=(6, 4))
+sns.boxplot(x='Category', y='UnitPrice', data=data, palette='Reds')
+plt.title("Unit Price by Category")
+plt.tight_layout()
+plt.show()
+
