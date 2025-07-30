@@ -33,3 +33,15 @@ print("\nSummary Statistics:\n", data.describe())
 print("\nRegion Counts:\n", data['Region'].value_counts())
 print("\nCity Counts:\n", data['City'].value_counts())
 print("\nCategory Counts:\n", data['Category'].value_counts())
+
+# --------------------------------------------
+# 4. Feature Engineering
+# --------------------------------------------
+
+# Ensure OrderDate is datetime
+data['OrderDate'] = pd.to_datetime(data['OrderDate'])
+
+# Create new features
+data['TotalSales'] = data['Quantity'] * data['UnitPrice']
+data['Month'] = data['OrderDate'].dt.month_name().str[:3]
+data['Year'] = data['OrderDate'].dt.year
