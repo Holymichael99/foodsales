@@ -24,3 +24,7 @@ cat("Duplicates:", sum(duplicated(data)), "\n")
 # Summary statistics for numerical columns
 summary(select(data, Quantity, UnitPrice))
 
+# Frequency counts for categorical variables
+table(data$Region)
+table(data$City)
+table(data$Category)
