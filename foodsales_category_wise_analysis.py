@@ -37,3 +37,13 @@ plt.title("Total Revenue by Category")
 plt.ylabel("Total Sales")
 plt.tight_layout()
 plt.show()
+
+# ------------------------------------------------------
+# 3. Price Distribution by Category
+# ------------------------------------------------------
+plt.figure(figsize=(8, 5))
+sns.boxplot(x='Category', y='UnitPrice', data=df, palette="Oranges")
+plt.title("Unit Price Distribution by Category")
+plt.ylabel("Unit Price")
+plt.tight_layout()
+plt.show()
