@@ -28,3 +28,13 @@ summary(select(data, Quantity, UnitPrice))
 table(data$Region)
 table(data$City)
 table(data$Category)
+
+# Feature Engineering
+data <- data %>%
+  mutate(
+    TotalSales = Quantity * UnitPrice,
+    OrderDate = as.Date(OrderDate),
+    Month = month(OrderDate, label = TRUE),
+    Year = year(OrderDate)
+  )
+
