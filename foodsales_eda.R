@@ -60,3 +60,13 @@ ggplot(data, aes(x = Category, y = UnitPrice)) +
 num_data <- select(data, Quantity, UnitPrice, TotalSales)
 cor_matrix <- cor(num_data)
 corrplot(cor_matrix, method = "circle", type = "lower")
+
+# Sales trends over time
+ggplot(data, aes(x = OrderDate, y = TotalSales)) +
+  geom_line(color = "blue") +
+  theme_minimal() + ggtitle("Sales Over Time")
+
+# Monthly Sales Trend
+monthly_sales <- data %>%
+  group_by(Year, Month) %>%
+  summarise(MonthlySales = sum(TotalSales), .groups = "drop")
