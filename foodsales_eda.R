@@ -38,3 +38,7 @@ data <- data %>%
     Year = year(OrderDate)
   )
 
+# Histograms for Quantity and UnitPrice
+ggplot(data, aes(x = Quantity)) + 
+  geom_histogram(bins = 30, fill = "skyblue", color = "black") +
+  theme_minimal() + ggtitle("Distribution of Quantity")
