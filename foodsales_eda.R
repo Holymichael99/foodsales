@@ -42,3 +42,7 @@ data <- data %>%
 ggplot(data, aes(x = Quantity)) + 
   geom_histogram(bins = 30, fill = "skyblue", color = "black") +
   theme_minimal() + ggtitle("Distribution of Quantity")
+
+ggplot(data, aes(x = UnitPrice)) + 
+  geom_histogram(bins = 30, fill = "salmon", color = "black") +
+  theme_minimal() + ggtitle("Distribution of Unit Price")
