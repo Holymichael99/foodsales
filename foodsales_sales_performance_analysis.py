@@ -13,3 +13,8 @@ df['OrderDate'] = pd.to_datetime(df['OrderDate'])
 df['TotalSales'] = df['Quantity'] * df['UnitPrice']
 df['Month'] = df['OrderDate'].dt.month_name().str[:3]
 df['Year'] = df['OrderDate'].dt.year
+
+# Sales by Region
+sales_by_region = df.groupby('Region')['TotalSales'].sum().reset_index()
+print("Sales by Region:\n", sales_by_region, "\n")
+
