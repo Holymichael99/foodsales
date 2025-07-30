@@ -47,7 +47,7 @@ ggplot(data, aes(x = UnitPrice)) +
   geom_histogram(bins = 30, fill = "salmon", color = "black") +
   theme_minimal() + ggtitle("Distribution of Unit Price")
 
-  # Box plots for UnitPrice and Quantity by Category
+ #Box plots for UnitPrice and Quantity by Category
 ggplot(data, aes(x = Category, y = Quantity)) + 
   geom_boxplot(fill = "lightgreen") + 
   theme_minimal() + ggtitle("Quantity by Category")
@@ -55,3 +55,8 @@ ggplot(data, aes(x = Category, y = Quantity)) +
 ggplot(data, aes(x = Category, y = UnitPrice)) + 
   geom_boxplot(fill = "lightcoral") + 
   theme_minimal() + ggtitle("Unit Price by Category")
+
+  # Correlation matrix (numerical only)
+num_data <- select(data, Quantity, UnitPrice, TotalSales)
+cor_matrix <- cor(num_data)
+corrplot(cor_matrix, method = "circle", type = "lower")
