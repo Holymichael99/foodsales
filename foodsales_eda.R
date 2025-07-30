@@ -14,3 +14,10 @@ str(data)
 
 # Shape of the dataset
 cat("Rows:", nrow(data), " Columns:", ncol(data), "\n")
+
+# Check for missing values
+sapply(data, function(x) sum(is.na(x)))
+
+# Check for duplicates
+cat("Duplicates:", sum(duplicated(data)), "\n")
+
