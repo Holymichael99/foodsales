@@ -26,3 +26,10 @@ print("\nDuplicate Rows:", data.duplicated().sum())
 
 print("\nSummary Statistics:\n", data.describe())
 
+# --------------------------------------------
+# 3. Frequency Counts
+# --------------------------------------------
+
+print("\nRegion Counts:\n", data['Region'].value_counts())
+print("\nCity Counts:\n", data['City'].value_counts())
+print("\nCategory Counts:\n", data['Category'].value_counts())
