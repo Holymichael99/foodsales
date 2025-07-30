@@ -35,3 +35,19 @@ plt.ylabel("Total Sales")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+# --------------------------------------------
+# 2. Weekly Sales Trend
+# --------------------------------------------
+weekly_sales = df.groupby('Week')['TotalSales'].sum().reset_index()
+
+weekly_sales['Week'] = pd.to_datetime(weekly_sales['Week'].astype(str).str.split('/').str[0])
+weekly_sales = weekly_sales.sort_values('Week')
+
+plt.figure(figsize=(12, 4))
+sns.lineplot(data=weekly_sales, x='Week', y='TotalSales')
+plt.title("Weekly Sales Trend")
+plt.xlabel("Week")
+plt.ylabel("Total Sales")
+plt.tight_layout()
+plt.show()
