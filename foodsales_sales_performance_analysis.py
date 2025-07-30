@@ -8,3 +8,8 @@ df = pd.read_excel(file_path, sheet_name="FoodSales")
 
 # Convert OrderDate to datetime format
 df['OrderDate'] = pd.to_datetime(df['OrderDate'])
+
+# Feature Engineering
+df['TotalSales'] = df['Quantity'] * df['UnitPrice']
+df['Month'] = df['OrderDate'].dt.month_name().str[:3]
+df['Year'] = df['OrderDate'].dt.year
