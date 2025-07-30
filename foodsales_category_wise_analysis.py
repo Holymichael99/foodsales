@@ -24,3 +24,16 @@ plt.title("Total Volume Sold by Category")
 plt.ylabel("Quantity Sold")
 plt.tight_layout()
 plt.show()
+
+# ------------------------------------------------------
+# 2. Total Revenue by Category
+# ------------------------------------------------------
+revenue_by_category = df.groupby('Category')['TotalSales'].sum().reset_index()
+print("Revenue by Category:\n", revenue_by_category, "\n")
+
+plt.figure(figsize=(6, 4))
+sns.barplot(x='Category', y='TotalSales', data=revenue_by_category, palette="Greens")
+plt.title("Total Revenue by Category")
+plt.ylabel("Total Sales")
+plt.tight_layout()
+plt.show()
