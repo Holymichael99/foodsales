@@ -51,3 +51,24 @@ plt.xlabel("Week")
 plt.ylabel("Total Sales")
 plt.tight_layout()
 plt.show()
+
+# --------------------------------------------
+# 3. Year-over-Year Seasonality
+# --------------------------------------------
+df['MonthName'] = df['OrderDate'].dt.month_name().str[:3]
+df['MonthNum'] = df['OrderDate'].dt.month
+seasonality = df.groupby(['Year', 'MonthNum', 'MonthName'])['TotalSales'].sum().reset_index()
+
+# Sort months properly
+month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+               'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+seasonality['MonthName'] = pd.Categorical(seasonality['MonthName'], categories=month_order, ordered=True)
+seasonality = seasonality.sort_values(['Year', 'MonthNum'])
+
+plt.figure(figsize=(10, 5))
+sns.lineplot(data=seasonality, x='MonthName', y='TotalSales', hue='Year', marker='o')
+plt.title("Seasonality: Monthly Sales by Year")
+plt.xlabel("Month")
+plt.ylabel("Total Sales")
+plt.tight_layout()
+plt.show()
