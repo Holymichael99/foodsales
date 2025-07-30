@@ -70,3 +70,7 @@ ggplot(data, aes(x = OrderDate, y = TotalSales)) +
 monthly_sales <- data %>%
   group_by(Year, Month) %>%
   summarise(MonthlySales = sum(TotalSales), .groups = "drop")
+
+ggplot(monthly_sales, aes(x = Month, y = MonthlySales, fill = factor(Year))) +
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_minimal() + ggtitle("Monthly Sales by Year")
