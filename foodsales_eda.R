@@ -11,3 +11,6 @@ data <- read_excel("Sampledatafoodslaes.xlsx", sheet = "FoodSales")
 
 # View structure
 str(data)
+
+# Shape of the dataset
+cat("Rows:", nrow(data), " Columns:", ncol(data), "\n")
