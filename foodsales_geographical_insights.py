@@ -14,3 +14,13 @@ sns.barplot(data=region_summary, x="Region", y="Sales", palette="Blues_d")
 plt.title("Total Sales by Region")
 plt.ylabel("Sales")
 plt.grid(True)
+
+# Quantity by Region
+plt.subplot(1, 2, 2)
+sns.barplot(data=region_summary, x="Region", y="Quantity", palette="Greens_d")
+plt.title("Total Quantity by Region")
+plt.ylabel("Quantity")
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
