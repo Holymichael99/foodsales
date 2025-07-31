@@ -36,7 +36,7 @@ Very few people buy more than 100 items — that's rare.
  What this means: Most purchases are small to medium in size. Bulk buying is uncommon, so the business might be dealing with regular consumers or small stores, not wholesalers.
 
  <img width="596" height="471" alt="Screenshot 2025-07-31 094116" src="https://github.com/user-attachments/assets/97d1c614-14fb-4807-a33a-0e7a35b0396a" />
- 2. Unit Price Distribution (How Much Items Cost)
+  Unit Price Distribution (How Much Items Cost)
 This chart shows how prices are spread across products.
 
 Most items are priced between $1.50 and $2.00.
@@ -66,7 +66,7 @@ Cookies have a wider price range — some are cheap, others more expensive.
  What this means: Crackers might be marketed as premium snacks, while cookies appeal to a wider audience with more variety.
 
  <img width="498" height="473" alt="Screenshot 2025-07-31 094151" src="https://github.com/user-attachments/assets/edf42f6b-400f-4cb5-a938-f3beb384183c" />
- 5. Correlation Heatmap (How Numbers Are Connected)
+  Correlation Heatmap (How Numbers Are Connected)
 This chart shows how different things relate to each other:
 
 TotalSales and Quantity are strongly connected (when people buy more, total sales go up — no surprise!).
@@ -103,13 +103,13 @@ Sales peak in June 2020 and November 2021.
 
 
 
-### 2. 🌍 Geographical Insights
+### 2. Geographical Insights
 - Compared total sales and quantity sold by **region**.
 - Identified **top-performing cities** using revenue and volume analysis.
 - Provided regional snapshots through side-by-side bar plots.
 
 - <img width="1195" height="560" alt="Screenshot 2025-07-31 095141" src="https://github.com/user-attachments/assets/defa45ed-9509-4512-a947-4a500e274733" />
-1. Total Sales by Region (Left chart in the image)
+ Total Sales by Region (Left chart in the image)
 This bar chart compares total sales between two regions: East and West.
 
 The East region shows significantly higher sales (over 21,000 units) compared to the West region (about 12,000 units).
@@ -120,7 +120,7 @@ From a business perspective, the East region is performing much better in terms 
 
  Takeaway: The East region is a top-performing region in terms of revenue.
 
- 2. Total Quantity by Region (Right chart in the image)
+  Total Quantity by Region (Right chart in the image)
 This chart shows the number of items sold in each region, regardless of price.
 
 The East region again leads with around 9,700 units sold, while the West region trails with just under 6,000 units.
@@ -130,7 +130,7 @@ This reinforces the earlier sales chart, showing that the East region is not jus
  Takeaway: The East has both higher volume and value in sales, indicating stronger customer demand
 
  <img width="1187" height="561" alt="Screenshot 2025-07-31 095152" src="https://github.com/user-attachments/assets/07447249-db48-41c5-8cc5-8d37dd96ac65" />
-  3. Total Sales by City (Left chart in the image)
+   Total Sales by City (Left chart in the image)
 This graph breaks total sales down by city.
 
 Boston is the top city in terms of revenue, with sales crossing 13,000 units.
@@ -141,7 +141,7 @@ San Diego shows the lowest performance, with just over 4,000 units.
 
  Takeaway: Boston is a standout city for revenue, while San Diego may need attention or a different sales strategy.
 
- 4. Total Quantity by City (Right chart in the image)
+  Total Quantity by City (Right chart in the image)
 This chart tracks the total number of items sold in each city.
 
 Once again, Boston leads, selling about 5,600 items, confirming it’s not just selling expensive products, but selling a lot of products.
@@ -153,7 +153,7 @@ San Diego again ranks lowest with just around 2,000 items sold.
  Takeaway: Boston is the strongest city by both value and volume; San Diego has the lowest customer engagement.
 
 
-### 3. 🗂️ Category-wise Analysis
+### 3. Category-wise Analysis
 - Summed total quantity sold and total revenue per product category.
 - Used box plots to illustrate how unit prices differ across categories.
 - Highlighted which categories drive volume and which are premium-priced.
@@ -195,7 +195,7 @@ Crackers have a very high and consistent price — notice there's almost no vari
 
 Bars and Snacks have lower and tighter price ranges, meaning they're more affordable and consistent in pricing.
 
-🔍 Interpretation:
+ Interpretation:
 
 The wide range in cookie prices gives flexibility — appealing to both budget and premium customers.
 
@@ -205,7 +205,7 @@ Bars and snacks are more price-stable and might be more attractive to price-sens
 
 
 
-### 4. 💸 Price Sensitivity
+### 4. Price Sensitivity
 - Analyzed the relationship between **Unit Price** and **Quantity Sold**.
 - Used scatter plots with category coloring to visualize demand elasticity.
 - Computed the correlation coefficient to quantify overall price sensitivity.
@@ -250,7 +250,7 @@ Crackers might be overpriced—they cost the most and don’t sell as much.
 Cookies offer pricing flexibility. You can price them higher or lower and still sell well, because customers seem more willing to pay for them.
 
 
-### 5. 📦 Product Mix & Contribution
+### 5. Product Mix & Contribution
 - Calculated each product category’s contribution to overall revenue.
 - Conducted a **Pareto Analysis (80/20 Rule)** to identify the top products driving the majority of revenue.
 - Visualized both category-level and product-level contributions using bar charts and cumulative plots.
@@ -302,7 +302,7 @@ Focus your inventory, marketing, or pricing strategies on these top performers.
 Consider whether to improve, repackage, or even phase out low performers.
 
 
-### 6. 📈 Time Series Trends
+### 6. Time Series Trends
 - Evaluated **monthly** and **weekly** sales performance over time.
 - Visualized **year-over-year seasonality** to identify consistent high and low periods.
 - Seasonal insights help inform promotions and inventory planning.
@@ -357,7 +357,7 @@ Understanding these seasonal shifts helps in forecasting demand and planning inv
 
 
 
-### 7. 🥇 Top & Bottom Performers
+### 7. Top & Bottom Performers
 - Identified top and bottom 5 products by **quantity sold** and by **total revenue**.
 - Helpful in identifying products that require push or should be phased out.
 - Visualization includes bar charts sorted by performance metric.
@@ -425,7 +425,7 @@ Bran and Whole Wheat show up in both top and bottom lists, which suggests there 
 
 
 
-### 8. 🧩 Performance Analysis by Dimensions
+### 8.Performance Analysis by Dimensions
 - Deep-dived into product, city, and category level performance.
 - Summarized top 5 cities and products by revenue.
 - Displayed clear views of product and region combinations that drive business.
@@ -441,7 +441,7 @@ That’s a big difference, and it tells us that the East is clearly the stronger
 Maybe they have more stores, better marketing, or just more customers — either way, it’s worth digging into why the East is doing so well.
 
 <img width="782" height="464" alt="Screenshot 2025-07-31 101917" src="https://github.com/user-attachments/assets/8ad1a676-2a5a-4deb-9b58-57266ca0201e" />
- 2. Top 5 Cities by Total Sales
+  Top 5 Cities by Total Sales
 Here we’re looking at which cities brought in the most sales.
 
 Boston is way ahead of the others — with total sales over 13,000.
