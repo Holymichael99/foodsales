@@ -24,3 +24,8 @@ plt.grid(True)
 
 plt.tight_layout()
 plt.show()
+
+# --- City-wise Performance ---
+city_summary = df.groupby("City")[["Sales", "Quantity"]].sum().reset_index()
+
+plt.figure(figsize=(12, 5))
