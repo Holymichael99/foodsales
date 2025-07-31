@@ -6,16 +6,21 @@ import seaborn as sns
 file_path = "Sampledatafoodslaes.xlsx"
 df = pd.read_excel(file_path, sheet_name="FoodSales")
 
-# Create 'Sales' column
+# Step 1: Create a Sales column
+df["Sales"] = df["UnitPrice"] * df["Quantity"]
 
-# Sales by Region
+# Step 2: Regional Summary
+region_summary = df.groupby("Region")[["Sales", "Quantity"]].sum().reset_index()
+
+# Step 3: Plot Regional Comparisons
+plt.figure(figsize=(12, 5))
+
 plt.subplot(1, 2, 1)
 sns.barplot(data=region_summary, x="Region", y="Sales", palette="Blues_d")
 plt.title("Total Sales by Region")
 plt.ylabel("Sales")
 plt.grid(True)
 
-# Quantity by Region
 plt.subplot(1, 2, 2)
 sns.barplot(data=region_summary, x="Region", y="Quantity", palette="Greens_d")
 plt.title("Total Quantity by Region")
@@ -25,12 +30,12 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-# --- City-wise Performance ---
+# Step 4: City-wise Summary
 city_summary = df.groupby("City")[["Sales", "Quantity"]].sum().reset_index()
 
+# Step 5: Plot City-wise Performance
 plt.figure(figsize=(12, 5))
 
-# Sales by City
 plt.subplot(1, 2, 1)
 sns.barplot(data=city_summary, x="City", y="Sales", palette="Purples_d")
 plt.title("Total Sales by City")
@@ -38,7 +43,6 @@ plt.ylabel("Sales")
 plt.xticks(rotation=45)
 plt.grid(True)
 
-# Quantity by City
 plt.subplot(1, 2, 2)
 sns.barplot(data=city_summary, x="City", y="Quantity", palette="Oranges_d")
 plt.title("Total Quantity by City")
@@ -48,3 +52,4 @@ plt.grid(True)
 
 plt.tight_layout()
 plt.show()
+
