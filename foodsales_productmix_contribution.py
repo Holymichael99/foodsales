@@ -9,3 +9,8 @@ df["Sales"] = df["UnitPrice"] * df["Quantity"]
 
 # Category Contribution
 category_sales = df.groupby("Category")["Sales"].sum().sort_values(ascending=False).reset_index()
+
+# Product Contribution (Pareto)
+product_sales = df.groupby("Product")["Sales"].sum().sort_values(ascending=False).reset_index()
+product_sales["CumulativeSales"] = product_sales["Sales"].cumsum()
+product_sales["CumulativePerc"] = 100 * product_sales["CumulativeSales"] / product_sales["Sales"].sum()
