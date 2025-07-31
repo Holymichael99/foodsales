@@ -37,3 +37,14 @@ plt.title("Total Sales by City")
 plt.ylabel("Sales")
 plt.xticks(rotation=45)
 plt.grid(True)
+
+# Quantity by City
+plt.subplot(1, 2, 2)
+sns.barplot(data=city_summary, x="City", y="Quantity", palette="Oranges_d")
+plt.title("Total Quantity by City")
+plt.ylabel("Quantity")
+plt.xticks(rotation=45)
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
