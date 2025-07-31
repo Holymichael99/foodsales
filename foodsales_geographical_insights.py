@@ -29,3 +29,11 @@ plt.show()
 city_summary = df.groupby("City")[["Sales", "Quantity"]].sum().reset_index()
 
 plt.figure(figsize=(12, 5))
+
+# Sales by City
+plt.subplot(1, 2, 1)
+sns.barplot(data=city_summary, x="City", y="Sales", palette="Purples_d")
+plt.title("Total Sales by City")
+plt.ylabel("Sales")
+plt.xticks(rotation=45)
+plt.grid(True)
