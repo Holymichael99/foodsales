@@ -16,3 +16,7 @@ plt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+# Correlation between UnitPrice and Quantity
+correlation = df[["UnitPrice", "Quantity"]].corr().iloc[0,1]
+print(f"📉 Correlation between Unit Price and Quantity: {correlation:.2f}")
